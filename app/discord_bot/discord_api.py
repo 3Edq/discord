@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import discord
 import os
-from app.chatgpt_ai.openai import chatgpt_response
+from app.chatgpt_ai.openai_helper import chatgpt_response
 
 load_dotenv()
 
@@ -28,6 +28,5 @@ class MyClient(discord.Client):
       await message.channel.send(f"Answer: {bot_response}")
     
 intents = discord.Intents.default()
-intents.message_content = True
 
 client = MyClient(intents=intents)
